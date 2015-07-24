@@ -17,10 +17,18 @@ class Circle{
   }
   
   void drawing(){
+    int clear_value = 0;
+    float y_locus = y;
+    float vy_locus = vy;
     if(vy < 0){
-      noStroke();
-      fill(255);
-      ellipse(x, y, 2, 2);
+      for(int i=0;i<20;i++){
+        noStroke();
+        fill(255, clear_value);
+        ellipse(x, y_locus, 10, 10);
+        vy_locus -= 0.04;
+        y_locus += vy_locus;
+        clear_value += 5;
+      }
     }
   }
   
